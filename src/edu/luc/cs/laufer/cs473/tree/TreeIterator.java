@@ -28,7 +28,7 @@ public class TreeIterator implements Iterator<TreeNode> {
 		final Iterator<TreeNode> i = driver.iterator();
 		TreeNode current = i.next();
 		i.remove();
-		for (final Enumeration<Object> e = current.children(); e.hasMoreElements(); ) {
+		for (final Enumeration<?> e = current.children(); e.hasMoreElements(); ) {
 			driver.add((TreeNode) e.nextElement());
 		}
 		return current;
