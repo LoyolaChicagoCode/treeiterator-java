@@ -3,10 +3,20 @@ plugins {
     id 'com.github.sherter.google-java-format' version '0.5'
 }
 
-apply plugin: 'java'
+apply plugin: 'application'
+
+
+libsDirName = 'lib' // simple workaround for error in startScripts task
+mainClassName = 'edu.luc.cs.laufer.cs473.tree.Trees'
+
+jar {
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+}
 
 tasks.withType(JavaCompile) {
-    options.compilerArgs << "-deprecation"
+    options.compilerArgs << "-Xlint:all"
 }
 
 repositories {
