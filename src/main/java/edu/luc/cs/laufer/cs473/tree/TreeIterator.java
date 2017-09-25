@@ -8,8 +8,8 @@ import javax.swing.tree.TreeNode;
 
 public class TreeIterator implements Iterator<TreeNode> {
 
-  TreeNode subject;
-  Queue<TreeNode> driver;
+  final TreeNode subject;
+  final Queue<TreeNode> driver;
 
   public TreeIterator(final TreeNode subject, final Queue<TreeNode> driver) {
     this.subject = subject;
